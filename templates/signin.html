@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<head>
+  <link rel="stylesheet" href="{% static 'css/signin.css' %}">
+</head>
+
+<body>
+  <form method="post" action="{% url 'signin' %}" class="form-group">{% csrf_token %}
+    <h1 class="h3 mb-3 font-weight-normal">ログイン画面</h1>
+    {% for item in form %}
+        <div class="form-group">
+            <input 
+                type="{{item.field.widget.input_type}}"
+                class="form-control" 
+                placeholder="{{item.name}}"
+                {% if item.field.required %}required{% endif %} 
+                name="{{item.name}}" 
+                id="{{item.id_for_label}}">
+        </div>
+    {% endfor %}
+    <button class="btn btn-lg btn-primary btn-block" type="submit">ログインする</button>
+    <input type="hidden" name="next" value="{{ next }}"/>
+  </form>
+  </body>
+
+{% endblock content %}
