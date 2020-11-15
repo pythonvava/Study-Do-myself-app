@@ -10,6 +10,12 @@ body {
   background-color: #f5f5f5;
 }
 
+.main-body{
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
 .form-group{
   text-align: center;
   margin-left: auto;
@@ -44,4 +50,14 @@ body {
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+}
+
+ul{
+  list-style: none;
+  padding-left: auto;
+  padding-right: auto;
+}
+
+.errorlist{
+  padding: 0;
 }

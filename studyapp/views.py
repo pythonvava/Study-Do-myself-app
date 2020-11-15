@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm
 from .forms import ProjectForm
 
@@ -9,7 +9,7 @@ def firstpg(request):
     return  render(request, 'firstpg.html')
 
 
-def signin(request):
+def login(request):
     if request.method == "POST":
         form = UserCreationForm(request.POST)
         if form.is_valid(): #入力に誤りがあるか確認
@@ -24,11 +24,14 @@ def signin(request):
                 #ユーザをログイン状態にする
                 login(request, new_user)
                 return redirect('firstpg')
-        form.add_error(None, 'LOGIN_ID、またはPASSWORDが違います。')
     else:
         form = UserCreationForm()
-    return render(request, 'signin.html', {'form': form})
+    return render(request, 'login.html', {'form': form})
 
+
+def logout(request):
+    logout(request)
+    return render(request, 'firstpg.html')
 
 
 def project(request):

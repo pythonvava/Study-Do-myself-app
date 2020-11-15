@@ -22,16 +22,16 @@
   <header>
     <div class="container-fluid">
       <div class="collapse bg-dark" id="navbarHeader">
-        <div class="row jsutify-content-end">
-          <div class="col-sm-4 py-2">
-            <ul class="list-unstyled">
-              <li><a href="signin" class="text-white">ログイン</a></li>
-              <li><a href="#" class="text-white">ログアウト</a></li>
-              <li><a href="#" class="text-white">使い方</a></li>
-            </ul>
-          </div>
+        <div class="row"></div>
+        <div class="col-sm-4 md-1 py-2">
+          <ul class="list-unstyled">
+            <li><a href="login" class="text-white">ログイン</a></li>
+            <li><a href="#" class="text-white">ログアウト</a></li>
+            <li><a href="#" class="text-white">使い方</a></li>
+          </ul>
         </div>
       </div>
+    </div>
     </div>
     <div class="navbar navbar-dark bg-dark shadow-sm">
       <div class="container d-flex justify-content-between">
@@ -48,6 +48,15 @@
               d="M11 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h1V7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7h1V2zm1 12h2V2h-2v12zm-3 0V7H7v7h2zm-5 0v-3H2v3h2z" />
           </svg>
         </a>
+
+        <div class="user-name">
+          {% if user.is_authenticated %}
+          <P>こんにちわ　{{ user.get_user_name }}</P>
+          {% else %}
+          <P>ログインしていません</P>
+          {% endif %}
+        </div>
+
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader"
           aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
