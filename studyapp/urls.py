@@ -1,10 +1,9 @@
 from django.urls import path
-from .views import firstpg_func, signup_func, signin_func, makeproject_func, profile_func
+from .views import firstpg, signin, project, profile
 
 urlpatterns = [
-    path('', firstpg_func, name='firstpg'),
-    path('signup/', signup_func, name='signup'),
-    path('signin/', signin_func, name='signin'),
-    path('makeproject/', makeproject_func, name='makeproject'),
-    path('profile/', profile_func, name='profile'),
+    path('', firstpg, name='firstpg'),
+    path('signin/', signin, name='signin'),
+    path('project/', project, name='project'),
+    path('profile/', profile, name='profile'),
 ]

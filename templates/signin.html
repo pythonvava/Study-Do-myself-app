@@ -25,6 +25,9 @@
     <button class="btn btn-lg btn-primary btn-block" type="submit">ログインする</button>
     <input type="hidden" name="next" value="{{ next }}"/>
   </form>
+
+  {{ form.errors }}
+
   </body>
 
 {% endblock content %}

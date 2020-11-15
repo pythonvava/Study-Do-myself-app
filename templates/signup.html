@@ -9,15 +9,20 @@
 </head>
 
 <body>
-  <form method="post" action="{% url 'signup' %}" class="form-group">{% csrf_token %}
+  <!--フォーム（入力欄）をsignupページに出す。-->
+  <form method="post" action="{% url 'signup' %}" class="form-group">{% csrf_token %} 
     <h1 class="h3 mb-3 font-weight-normal">登録画面</h1>
+    <!--下のタグのformはViews.pyの中のUserCreationForm-->
     {% for item in form %}
         <div class="form-group">
+          <!--formの中の要素を取り出す-->
+          <!--item.nameは要素の名前をつける-->
+          <!--item.id_for_labelはidに要素の名前をつける-->
             <input 
-                type="{{item.field.widget.input_type}}"
+                type="{{item.field.widget.input_type}}" 
                 class="form-control" 
                 placeholder="{{item.name}}"
-                {% if item.field.required %}required{% endif %} 
+                {% if item.field.required %}required{% endif %}
                 name="{{item.name}}" 
                 id="{{item.id_for_label}}">
         </div>
@@ -25,11 +30,16 @@
     <button class="btn btn-lg btn-primary btn-block" type="submit">登録する</button>
     <input type="hidden" name="next" value="{{ next }}"/>
   </form>
+
+<div class="error-box">
+  {{form.errors}}
+</div>
+
 </body>
 
 {% endblock content %}
 
-<!--
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script>
   window.jQuery || document.write('<script src="/docs/4.5/assets/js/vendor/jquery-slim.min.js"><\/script>')
@@ -39,6 +49,4 @@
 <script src="/docs/4.5/assets/js/src/application.js"></script>
 <script src="/docs/4.5/assets/js/src/search.js"></script>
 <script src="/docs/4.5/assets/js/src/ie-emulation-modes-warning.js"></script>
--->
-
 
