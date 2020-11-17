@@ -25,8 +25,9 @@
         <div class="row"></div>
         <div class="col-sm-4 md-1 py-2">
           <ul class="list-unstyled">
+            <li><a href="signup" class="text-white">登録する</a></li>
             <li><a href="login" class="text-white">ログイン</a></li>
-            <li><a href="#" class="text-white">ログアウト</a></li>
+            <li><a href="logout" class="text-white">ログアウト</a></li>
             <li><a href="#" class="text-white">使い方</a></li>
           </ul>
         </div>
@@ -50,11 +51,7 @@
         </a>
 
         <div class="user-name">
-          {% if user.is_authenticated %}
-          <P>こんにちわ　{{ user.get_user_name }}</P>
-          {% else %}
-          <P>ログインしていません</P>
-          {% endif %}
+          <P>こんにちわ　{{ user.username }}</P>
         </div>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader"

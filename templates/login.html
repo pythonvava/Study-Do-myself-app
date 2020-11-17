@@ -5,31 +5,41 @@
 {% block content %}
 
 <head>
-  <title>Signin Template for Bootstrap · Bootstrap</title>
+  <title>Signin Template for from Bootstrap</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{% static 'css/login.css' %}">
 </head>
 
 <body>
-  <div class="main-body">
-    <form method="post" action="{% url 'login' %}" class="form-group">{% csrf_token %}
-      <h1 class="h3 mb-3 font-weight-normal">ログイン画面</h1>
-      {% for item in form %}
-      <div class="form-group">
-        <input type="{{item.field.widget.input_type}}" class="form-control" placeholder="{{item.name}}"
-          {% if item.field.required %}required{% endif %} name="{{item.name}}" id="{{item.id_for_label}}">
-      </div>
-      {% endfor %}
-      <button class="btn btn-lg btn-primary btn-block" type="submit">ログインする</button>
-      <input type="hidden" name="next" value="{{ next }}" />
-    </form>
-    <br>
-    <div>
-      {{ form.errors }}
-    </div>
-  </div>
+  <div class="container">
+    <h1 class="text-center logo my-4">
+      <a class="top-page" href="{% url 'firstpg' %}">Study Do Myself</a>
+    </h1>
+    <div class="row justify-content-center">
+      <div class="col-lg-4 col-md-6 col-sm-8">
+        <div class="card">
+          <div class="card-body">
+            <h3 class="card-title">Log in</h3>
+            <form method="post" novalidate>
+              {% csrf_token %}
+              {% for item in form %}
+              <div class="form-group">
+                <input type="{{item.field.widget.input_type}}" class="form-control" placeholder="{{item.name}}"
+                  {% if item.field.required %}required{% endif %} name="{{item.name}}" id="{{item.id_for_label}}">
+              </div>
+              {% endfor %}
+              <button type="submit" class="btn btn-primary btn-block">Log in</button>
+            </form>
+          </div>
+          <div class="card-footer text-muted text-center">
+            if you have not account yet <a href="{% url 'signup' %}">Sign up</a>
+          </div>
+        </div>
 
+      </div>
+    </div>
+    {{ form.errors }}
 </body>
 
 {% endblock content %}

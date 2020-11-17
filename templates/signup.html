@@ -5,48 +5,37 @@
 {% block content %}
 
 <head>
+  <title>Signup Template for Bootstrap · Bootstrap</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{% static 'css/signup.css' %}">
 </head>
 
 <body>
-  <!--フォーム（入力欄）をsignupページに出す。-->
-  <form method="post" action="{% url 'signup' %}" class="form-group">{% csrf_token %} 
-    <h1 class="h3 mb-3 font-weight-normal">登録画面</h1>
-    <!--下のタグのformはViews.pyの中のUserCreationForm-->
-    {% for item in form %}
-        <div class="form-group">
-          <!--formの中の要素を取り出す-->
-          <!--item.nameは要素の名前をつける-->
-          <!--item.id_for_labelはidに要素の名前をつける-->
-            <input 
-                type="{{item.field.widget.input_type}}" 
-                class="form-control" 
-                placeholder="{{item.name}}"
-                {% if item.field.required %}required{% endif %}
-                name="{{item.name}}" 
-                id="{{item.id_for_label}}">
+  <div class="container">
+    <h1 class="text-center logo my-4">
+      <a class="top-page" href="{% url 'firstpg' %}">Study Do Myself</a>
+    </h1>
+    <div class="row justify-content-center">
+      <div class="col-lg-4 col-md-6 col-sm-8">
+        <div class="card">
+          <div class="card-body">
+            <h3 class="card-title">Sign up</h3>
+            <form method="post" novalidate>
+              {% csrf_token %}
+              {% for item in form %}
+              <div class="form-group">
+                <input type="{{item.field.widget.input_type}}" class="form-control" placeholder="{{item.name}}"
+                  {% if item.field.required %}required{% endif %} name="{{item.name}}" id="{{item.id_for_label}}">
+              </div>
+              {% endfor %}
+              <button type="submit" class="btn btn-primary btn-block">Sign up</button>
+            </form>
+          </div>
         </div>
-    {% endfor %}
-    <button class="btn btn-lg btn-primary btn-block" type="submit">登録する</button>
-    <input type="hidden" name="next" value="{{ next }}"/>
-  </form>
-
-<div class="error-box">
-  {{form.errors}}
-</div>
-
+      </div>
+    </div>
+    {{ form.errors }}
 </body>
 
 {% endblock content %}
-
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script>
-  window.jQuery || document.write('<script src="/docs/4.5/assets/js/vendor/jquery-slim.min.js"><\/script>')
-</script><script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script><script src="/docs/4.5/assets/js/vendor/anchor.min.js"></script>
-<script src="/docs/4.5/assets/js/vendor/clipboard.min.js"></script>
-<script src="/docs/4.5/assets/js/vendor/bs-custom-file-input.min.js"></script>
-<script src="/docs/4.5/assets/js/src/application.js"></script>
-<script src="/docs/4.5/assets/js/src/search.js"></script>
-<script src="/docs/4.5/assets/js/src/ie-emulation-modes-warning.js"></script>
-

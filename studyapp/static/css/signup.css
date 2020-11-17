@@ -10,6 +10,11 @@ body {
   background-color: #f5f5f5;
 }
 
+.main-body{
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .form-group{
   text-align: center;
   margin-left: auto;
@@ -48,12 +53,26 @@ body {
   border-top-right-radius: 0;
 }
 
+a.top-page{
+  color :black;
+  text-decoration: none;
+}
+
+div h1 a.hover{
+  color :black;
+  text-decoration: none;
+}
+
 ul{
   list-style: none;
   padding-left: auto;
   padding-right: auto;
 }
 
-div.error-box{
-  display: flex;
+.errorlist{
+  padding: 0;
+}
+
+.card-footer.text-muted.text-center{
+  background-color: lavender;
 }

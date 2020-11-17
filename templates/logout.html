@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<head>
+    <title>Logout template form Bootstrap</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/logout.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-6 col-sm-8">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">ログアウトしました</h3>
+                    </div>
+                    <div class="card-footer text-muted text-center">
+                        To top page <a href="{% url 'firstpg' %}">Here</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+</body>
+
+{% endblock content %}
