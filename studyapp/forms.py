@@ -3,6 +3,6 @@ from .models import Project
 
 class ProjectForm(forms.ModelForm):
 
-    class meta:
+    class Meta:
         model = Project
-        fields = ('project_name', 'description')
+        fields = ( 'project_name', 'description',)

@@ -30,7 +30,8 @@ def signup(request):
 
 
 def project(request):
-    form = ProjectForm
+    form = ProjectForm(request.POST)
+    form.save()
     return render(request, 'project.html', {'form':form})
 
 

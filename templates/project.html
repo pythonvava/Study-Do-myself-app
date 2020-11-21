@@ -3,28 +3,41 @@
 {% load static %}
 
 {% block content %}
+
 <head>
-    <link rel="stylesheet" type="text/css" href="http://mplus-fonts.sourceforge.jp/webfonts/general-j/mplus_webfonts.css">
-    <link rel="stylesheet" href="{% static 'css/makeproject.css' %}">
-    <title>プロジェクト作成</title>
+    <title>Signin Template for from Bootstrap</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/project.css' %}">
 </head>
 
 <body>
-    <h2>プロジェクト作成</h2>
-        <form class="form-makeproject" method='POST' action='project'> {% csrf_token %}
-
-            {%for item in form%}
-                <div class="form-group"></div>
-                    <input 
-                        type="{{item.name.widget.input-type}}"
-                        class="form-control"
-                        placeholder="{{item.name}}"
-                        {% if item.field.required %}required{% endif %}
-                        name="{{item.name}}" 
-                        id="{{item.id_for_label}}">              
+    <div class="container">
+        <h1 class="text-center logo my-4">
+            <a class="top-page" href="{% url 'firstpg' %}">Study Do Myself</a>
+        </h1>
+        <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-6 col-sm-8">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">プロジェクト作成</h3>
+                        <form method="POST" novalidate>
+                            {% csrf_token %}
+                            {% for item in form %}
+                            <div class="form-group">
+                                <input type="{{item.field.widget.input_type}}" class="form-control"
+                                    placeholder="{{item.name}}" {% if item.field.required %}required{% endif %}
+                                    name="{{item.name}}" id="{{item.id_for_label}}">
+                            </div>
+                            {% endfor %}
+                            <button type="submit" class="btn btn-primary btn-block">作成する</button>
+                        </form>
+                    </div>
                 </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">登録する</button>
-    </form>
+
+            </div>
+        </div>
+        {{ form.errors }}
 </body>
 
 {% endblock content %}

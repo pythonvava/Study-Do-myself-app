@@ -1,0 +1,35 @@
+body {
+    height: 100%;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    text-align: center;
+    margin: auto;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background-color: #f5f5f5;
+  }
+  
+  a.top-page{
+    color :black;
+    text-decoration: none;
+  }
+  
+  div h1 a.hover{
+    color :black;
+    text-decoration: none;
+  }
+  
+  ul{
+    list-style: none;
+    padding-left: auto;
+    padding-right: auto;
+  }
+  
+  .errorlist{
+    padding: 0;
+  }
+  
+  .card-footer.text-muted.text-center{
+    background-color: lavender;
+  }

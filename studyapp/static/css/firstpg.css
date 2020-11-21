@@ -6,3 +6,20 @@
 .user-name{
     color: white;
 }
+
+.btn.btn-link.p-0.ml-3{
+    color:#e6e6fa;
+    text-emphasis: none;
+}
+
+.btn.btn-link.p-0.ml-3.hover{
+    color:#e6e6fa;
+}
+
+ul li a{
+    color: white;
+}
+
+ul li a.hover{
+    color: white;
+}

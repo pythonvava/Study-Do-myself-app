@@ -20,20 +20,6 @@
 <body>
 
   <header>
-    <div class="container-fluid">
-      <div class="collapse bg-dark" id="navbarHeader">
-        <div class="row"></div>
-        <div class="col-sm-4 md-1 py-2">
-          <ul class="list-unstyled">
-            <li><a href="signup" class="text-white">登録する</a></li>
-            <li><a href="login" class="text-white">ログイン</a></li>
-            <li><a href="logout" class="text-white">ログアウト</a></li>
-            <li><a href="#" class="text-white">使い方</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    </div>
     <div class="navbar navbar-dark bg-dark shadow-sm">
       <div class="container d-flex justify-content-between">
         <a href="#" class="navbar-brand d-flex align-items-center">
@@ -49,15 +35,39 @@
               d="M11 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h1V7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7h1V2zm1 12h2V2h-2v12zm-3 0V7H7v7h2zm-5 0v-3H2v3h2z" />
           </svg>
         </a>
-
         <div class="user-name">
           <P>こんにちわ　{{ user.username }}</P>
         </div>
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader"
-          aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+        <button class="btn btn-link p-0 ml-3" type="button" data-toggle="collapse" data-target="#menu"
+          aria-controls="bd-docs-nav" aria-expanded="false" aria-label="Toggle menu navigation"><svg
+            xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" role="img" focusable="false">
+            <title>Menu</title>
+            <path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"
+              d="M4 7h22M4 15h22M4 23h22" />
+          </svg></button>
+
+        <div class="container">
+          <nav class="collapse" id="menu">
+            <div class="menu-item active">
+              <ul class="nav">
+                <li>
+                  <a href="signup">登録</a>
+                </li>
+                <li>
+                  <a href="login">ログイン</a>
+                </li>
+                <li>
+                  <a href="logout">ログアウト</a>
+                </li>
+                <li>
+                  <a href="">Study Do Myselfの使い方</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+
       </div>
     </div>
   </header>
