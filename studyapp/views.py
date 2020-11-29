@@ -20,18 +20,22 @@ def signup(request):
             input_password = form.cleaned_data.get("password1")
             #ユーザを認証する
             new_user = authenticate(username=input_username, password=input_password)
-            if new_user is not None:
-                #ユーザをログイン状態にする
-                login(request, new_user)
-                return render(request, 'firstpg', login)
     else:
         form = UserCreationForm()
     return render(request, 'signup.html', {'form': form})
 
 
 def project(request):
-    form = ProjectForm(request.POST)
-    form.save()
+    if request.method == "POST":
+        form = ProjectForm(request.POST)
+        if form.is_valid():
+            project = form.save(commit=False)
+            project.author = request.user
+            project.save()
+            form.save()
+            return redirect('firstpg')
+    else:
+        form = ProjectForm()
     return render(request, 'project.html', {'form':form})
 
 

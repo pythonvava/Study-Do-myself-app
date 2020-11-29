@@ -1,6 +1,12 @@
-.container-fluid{
+body{
+    font-family: 'Comic Sans MS';
+}
+
+
+.menu-item.active{
     width: 100%;
-    padding: 0
+    padding: 0;
+    text-align: right;
 }
 
 .user-name{
@@ -16,10 +22,12 @@
     color:#e6e6fa;
 }
 
-ul li a{
+.menu-item.active a{
     color: white;
+    padding: 20px;
 }
 
-ul li a.hover{
+.menu-item.active a.hover{
     color: white;
+    text-decoration: none;
 }
