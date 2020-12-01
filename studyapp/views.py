@@ -38,6 +38,3 @@ def project(request):
         form = ProjectForm()
     return render(request, 'project.html', {'form':form})
 
-
-def profile(request):
-    return render(request, 'profile.html')

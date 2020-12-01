@@ -87,30 +87,50 @@
   </header>
 
   <main role="main">
-
     <section class="jumbotron text-center">
-      <div class="container">
-        <h1 class="jumbotron-heading">Album example</h1>
-        <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator,
-          etc. Make it short and sweet, but not too short so folks don't simply skip over it entirely.</p>
-        <p>
-          <a href="#" class="btn btn-primary my-2">Main call to action</a>
-          <a href="#" class="btn btn-secondary my-2">Secondary action</a>
-        </p>
+      <div class="carousel slide" data-ride="carousel" style="width:400px">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="slide1.png" alt="First slide">
+          </div>
+          <div class="carousel-item">
+            <img src="slide2.png" alt="Second slide">
+          </div>
+          <div class="carousel-item">
+            <img src="slide3.png" alt="Third slide">
+          </div>
+        </div>
       </div>
     </section>
 
-    
+    {% if user.is_authenticated %}
+    <table style="border-color: silver ; border-style:groove; border-width:3px ;">
+      <tr>
+        <th>No.</th>
+        <th>Project_name</th>
+        <th>Build-date</th>
+        <th>Due-date</th>
+      </tr>
+      <tr>
+        <td>{{Project.key}}</td>
+        <td>{{Project.project_name}}</td>
+        <td>{{Project.build_date}}</td>
+        <td>{{Project.due_date}}</td>
+      </tr>
+
+    </table>
+    {% endif %}
+
+    <div class="main-content">
+      <p><a class="btn btn-primary" style="width:150px" href="project" role="button">Build Project</a></p>
+    </div>
+
+
   </main>
 
-  <footer class="text-muted">
-    <div class="container">
-      <p class="float-right">
-        <a href="#">Back to top</a>
-      </p>
-      <p>Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
-      <p>New to Bootstrap? <a href="../../">Visit the homepage</a> or read our <a href="../../getting-started/">getting
-          started guide</a>.</p>
+  <footer>
+    <div class="container-fluid" style="margin-right:auto; margin-left:auto; width:300px;">
+      Keep your best by steping everyday
     </div>
   </footer>
 

@@ -9,8 +9,12 @@ class Project(models.Model):
     description = models.TextField('目標', blank=False)
     expenses_item = models.CharField('経費項目', max_length=200, blank=True)
     expenses = models.CharField('経費', max_length=200, blank=True)
-    build_date = models.DateTimeField('作成日', blank=True, null=True)
-    due_date = models.DateTimeField('目標日', blank=True, null=True)
+    build_date = models.DateField(verbose_name='作成日', blank=True, null=True)
+    due_date = models.DateField(verbose_name='設定日', blank=True, null=True)
+
+    def build_date(self):
+        self.build_date = timezone.now()
+        self.save()
 
     def __str__(self):
         return self.project_name

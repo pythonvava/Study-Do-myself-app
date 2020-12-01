@@ -1,3 +1,4 @@
+import bootstrap_datepicker_plus as datetimepicker
 from django import forms
 from .models import Project
 
@@ -11,7 +12,7 @@ class ProjectForm(forms.ModelForm):
             'expenses':'',
             'description':'',
         }
-        fields = ('project_name', 'expenses_item', 'expenses', 'description', )
+        fields = ('project_name', 'expenses_item', 'expenses', 'description', 'due_date', )
         widgets = {
             'project_name': forms.TextInput(
                 attrs={

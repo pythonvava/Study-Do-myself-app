@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/project.css' %}">
+    
 </head>
 
 <body>
@@ -28,6 +29,7 @@
                                 {{ form.expenses_item }}
                                 {{ form.expenses }}
                                 {{ form.description }}
+                                {{ form.due_date }}
                             </div>
                             <button type="submit" class="btn btn-primary btn-block">作成する</button>
                         </form>
