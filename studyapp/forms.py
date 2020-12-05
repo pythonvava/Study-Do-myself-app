@@ -1,9 +1,11 @@
-import bootstrap_datepicker_plus as datetimepicker
 from django import forms
 from .models import Project
+from django.contrib.admin.widgets import AdminDateWidget
+from django.utils import timezone
+
 
 class ProjectForm(forms.ModelForm):
-        
+
     class Meta:
         model = Project
         labels = {
@@ -11,8 +13,10 @@ class ProjectForm(forms.ModelForm):
             'expenses_item':'',
             'expenses':'',
             'description':'',
+            'build_date':'',
+            'due_date':'',
         }
-        fields = ('project_name', 'expenses_item', 'expenses', 'description', 'due_date', )
+        fields = ('project_name', 'expenses_item', 'expenses', 'description', 'build_date', 'due_date')
         widgets = {
             'project_name': forms.TextInput(
                 attrs={
@@ -30,12 +34,18 @@ class ProjectForm(forms.ModelForm):
                 attrs={
                     'class':"form-control",
                     'placeholder':'expenses (経費)',
+                    'pattern':'[0-9]',
                     }
             ),
             'description': forms.Textarea(
                 attrs={
                     'class':"form-control",
                     'placeholder':'description (概要)',
+                    }
+            ),
+            'due_date': forms.SelectDateWidget(
+                attrs={
+                    'class':"form-control",
                     }
             ),
         }

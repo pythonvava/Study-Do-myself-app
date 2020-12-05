@@ -8,6 +8,7 @@ body {
     padding-top: 100px;
     padding-bottom: 100px;
     background-image: url(../img/triangle-mosaic.png);
+    font-family: 'Comic Sans MS';
   }
   
   a.top-page{
@@ -35,4 +36,8 @@ body {
     margin:auto;
     margin-top: 10px;
     margin-bottom: 10px;
+  }
+
+  .select.due_date_year{
+    placeholder 
   }

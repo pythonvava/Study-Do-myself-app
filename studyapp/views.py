@@ -3,6 +3,8 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout, views
 from django.contrib.auth.forms import UserCreationForm
 from .forms import ProjectForm
+from .models import Project
+from django.utils import timezone
 
 
 def firstpg(request):
@@ -37,4 +39,9 @@ def project(request):
     else:
         form = ProjectForm()
     return render(request, 'project.html', {'form':form})
+
+
+def my_page(request):
+    projects = Project.objects.filter(build_date__lte=timezone.now()).order_by('build_date')
+    return render(request, '', {'projects':projects})
 
