@@ -53,3 +53,5 @@ def mypage(request):
 class ProjectDetailView(DetailView):
     template_name = 'project_detail.html'
     model = Project
+
+

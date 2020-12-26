@@ -14,3 +14,11 @@ class Project(models.Model):
 
     def __str__(self):
         return self.project_name
+
+
+class StudyDetail(models.Model):
+    StudyDate = models.DateField('勉強日', blank=False)
+    StudyTime = models.DateField('勉強時間', blank=False)
+    SelfAssesment = models.TextField('自己評価', blank=False)
+    Comment = models.TextField('コメント', blank=False)
+
