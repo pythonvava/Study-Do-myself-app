@@ -37,28 +37,6 @@ body{
     margin-left: auto;
 }
 
-table {
-    margin-right: auto;
-    margin-left: auto;
-    font-size: 14pt;
-  }
-  
-table tr th {
-    background-color: lavender;
-    color: black;
-    padding: 2px 10px;
-    border-width: 2px;
-    border:1.5px #7e7e7e solid;
-  }
-  
-table tr td {
-    background-color: lavender;
-    color: black;
-    padding: 2px 10px;
-    border-width: 2px;
-    border:1.5px #7e7e7e solid;
-  }
-
 .container-fluid{
     text-align: center;
 }
