@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import firstpg, signup, project, mypage
+from .views import firstpg, signup, project, mypage, start
 from django.contrib.auth import views as auth_views
 from . import views
 
@@ -12,4 +12,5 @@ urlpatterns = [
     path('project/', project, name='project'),
     path('mypage/', mypage, name='mypage'),
     path('project_detail/<int:pk>/', views.ProjectDetailView.as_view(), name='project_detail'),
+    path('start/', start, name='start'),
 ]

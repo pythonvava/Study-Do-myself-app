@@ -16,9 +16,10 @@ class Project(models.Model):
         return self.project_name
 
 
-class StudyDetail(models.Model):
-    StudyDate = models.DateField('勉強日', blank=False)
-    StudyTime = models.DateField('勉強時間', blank=False)
+class StudySet(models.Model):
+    minute = models.DateField('分', blank=False)
+    count = models.DateField('セット回数', blank=False)
+    sumtime = models.DateField('総勉強時間', blank=False)
     SelfAssesment = models.TextField('自己評価', blank=False)
     Comment = models.TextField('コメント', blank=False)
 

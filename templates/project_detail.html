@@ -64,11 +64,14 @@
     <div class=contents>
       <h3 class=project_name> ProjectName </h3>
       <p class=box>{{ object.project_name }}</p>
+
       <h3 class=Description> Description </h3>
-      <p class=box>{{ object.description }}</p>
+      <p class=descriptionbox>{{ object.description }}</p>
+
       <h3 class=due_date> DueDate </h3>
       <p class=box>{{ object.due_date }}</p>
-      <button class="btn btn-primary btn-block">Start</button>
+
+      <button class="btn btn-primary btn-block"><a href="{% url 'start' %}">Make plan</a></button>
       <table>
         <tr class='term'>
           <th> Study_Date </th>

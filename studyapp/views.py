@@ -55,3 +55,5 @@ class ProjectDetailView(DetailView):
     model = Project
 
 
+def start(request):
+    return render(request, 'start.html')
