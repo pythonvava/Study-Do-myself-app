@@ -15,11 +15,15 @@ class Project(models.Model):
     def __str__(self):
         return self.project_name
 
-
-class StudySet(models.Model):
-    minute = models.DateField('分', blank=False)
+class SetPlan(models.Model):
+    MINUTES = (
+        ('' , '',),
+        ('1' , 15,),
+        ('2' , 25,),
+        ('3' , 50,),
+    )
+    minute = models.DateField('分', choices=MINUTES, blank=False, default=None)
     count = models.DateField('セット回数', blank=False)
     sumtime = models.DateField('総勉強時間', blank=False)
     SelfAssesment = models.TextField('自己評価', blank=False)
     Comment = models.TextField('コメント', blank=False)
-

@@ -12,8 +12,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title>project_detail</title>
-  <link rel='stylesheet' href="{% static 'css/project_detail.css' %}">
+  <title>SetPlan</title>
+  <link rel='stylesheet' href="{% static 'css/start.css' %}">
 </head>
 
 <body>
@@ -47,10 +47,9 @@
           <strong>Hello　{{ user.username }}</strong>
           {% endif %}
         </div>
-
         <div class="container-fluid">
           <div class="menu-item active">
-            {% if user.is_authenticated  %}
+            {% if user.is_authenticated %}
             <a href="{% url 'logout' %}">Log out</a>
             {% endif %}
           </div>
@@ -61,7 +60,39 @@
   </header>
 
   <main role="main">
-    
+    <div class=set-menu>
+      <h3>Please set today's study plan</h3>
+      <div class=input-area>
+        <form method="POST" action="{% url 'project' %}" novalidate>
+          {% csrf_token %}
+          <div class="set" style="display:inline-flex">
+            <div class=input-minutes>
+              {{ form.minute }}
+            </div> 
+            <div class=input-sets>
+              {{ form.count }}
+            </div>
+            <div class=set-button>
+              <button>Set</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class=content>
+      <h3>Today's Menu</h3>
+    </div>
+
+    <button> OK </button>
+
+    </div>
+    <div class="timer" id="timer">00:00:000</div>
+    <div class="buttons">
+      <button id="start">start</button>
+      <button id="stop">stop</button>
+      <button id="reset">reset</button>
+    </div>
   </main>
   <br>
   <footer>
@@ -76,10 +107,10 @@
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
-  <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+  <script type="JavaScript" src="{% static 'js/timer.js' %}"></script>
+  <script type="JavaScript" src="{% static 'js/gettime.js' %}"></script>
 </body>
 
 </html>
-
 
 {% endblock content %}

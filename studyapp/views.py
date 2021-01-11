@@ -2,8 +2,8 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout, views
 from django.contrib.auth.forms import UserCreationForm
-from .forms import ProjectForm
-from .models import Project
+from .forms import ProjectForm, SetPlanForm
+from .models import Project, SetPlan
 from django.utils import timezone
 from django.contrib.auth.decorators import login_required
 from django.views.generic import ListView, DetailView
@@ -54,6 +54,14 @@ class ProjectDetailView(DetailView):
     template_name = 'project_detail.html'
     model = Project
 
-
-def start(request):
-    return render(request, 'start.html')
+def SetPlan(request):
+    if request.method == "POST":
+        form = SetPlanForm(request.POST)
+        if form.is_valid():
+            Startset = form.save(commit=False)
+            Startset.save()
+            form.save()
+            return redirect('setplan')
+    else:
+        form = SetPlanForm()
+    return  render(request, 'start.html', {'form':form})

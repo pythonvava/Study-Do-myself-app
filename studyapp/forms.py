@@ -1,5 +1,5 @@
 from django import forms
-from .models import Project
+from .models import Project, SetPlan
 from django.contrib.admin.widgets import AdminDateWidget
 from django.utils import timezone
 
@@ -47,5 +47,37 @@ class ProjectForm(forms.ModelForm):
                 attrs={
                     'class':"form-control",
                     }
+            ),
+        }
+
+
+class SetPlanForm(forms.ModelForm):
+
+    class Meta:
+        model = SetPlan
+        labels = {
+            'minute':'',
+            'count':'',
+            'sumtime':'',
+        }
+        fields = ('minute', 'count', 'sumtime',)
+        widgets = {
+            'minute' : forms.Select(
+                attrs={
+                    'class':"form-control",
+                    'palceholder':'minute（分/セット）',
+                }
+            ),
+            'count' : forms.DateInput(
+                attrs={
+                    'class':"form-control",
+                    'palceholder':'set（セット）',
+                }
+            ),
+            'sumtime' : forms.DateInput(
+                attrs={
+                    'class':"form-control",
+                    'palceholder':'sumtime（合計）',
+                }
             ),
         }
