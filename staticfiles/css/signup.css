@@ -1,0 +1,81 @@
+body {
+  height: 100%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  text-align: center;
+  margin: auto;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background-image: url(../img/triangle-mosaic.png);
+  font-family: 'Comic Sans MS';
+}
+
+  
+
+.main-body{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-group{
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: auto;
+  padding-bottom: auto;
+}
+
+.form-signup {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+}
+.form-signup .checkbox {
+  font-weight: 400;
+}
+.form-signup .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signup .form-control:focus {
+  z-index: 2;
+}
+.form-signup input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signup input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+a.top-page{
+  color :black;
+  text-decoration: none;
+}
+
+div h1 a.hover{
+  color :black;
+  text-decoration: none;
+}
+
+ul{
+  list-style: none;
+  padding-left: auto;
+  padding-right: auto;
+}
+
+.errorlist{
+  padding: 0;
+}
+
+.card-footer.text-muted.text-center{
+  background-color: lavender;
+}

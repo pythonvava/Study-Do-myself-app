@@ -1,0 +1,47 @@
+body{
+    font-family: 'Comic Sans MS';
+    background-image: url(../img/triangle-mosaic.png);
+}
+
+
+.menu-item.active{
+    width: 100%;
+    padding: 0;
+    text-align: right;
+}
+
+.user-name{
+    color: white;
+}
+
+.btn.btn-link.p-0.ml-3{
+    color:#e6e6fa;
+    text-emphasis: none;
+}
+
+.btn.btn-link.p-0.ml-3.hover{
+    color:#e6e6fa;
+}
+
+.menu-item.active a{
+    color: white;
+    padding: 20px;
+}
+
+.menu-item.active a.hover{
+    color: white;
+    text-decoration: none;
+}
+
+.contents{
+    margin-left: auto;
+}
+
+.container-fluid{
+    text-align: center;
+}
+
+footer{
+    padding-left: auto;
+    padding-right: auto;
+}
