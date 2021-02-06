@@ -1,1 +1,1 @@
-web: gunicorn studyapp.wsgi --log-
+web: gunicorn studypro.wsgi --log-file -
