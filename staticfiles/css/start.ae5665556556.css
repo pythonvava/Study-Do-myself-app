@@ -1,0 +1,194 @@
+body{
+  font-family: 'Comic Sans MS';
+  background-image: url("../img/triangle-mosaic.ffed8476acb4.png");
+}
+
+
+.btn.btn-primary.btn-block{
+  width:30%;
+  height:70px;
+  font-size: 30px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 30px;
+}
+
+.menu-item.active{
+  width: 100%;
+  padding: 0;
+  text-align: right;
+}
+
+.user-name{
+  color: white;
+}
+
+a{
+  color :rgb(214, 217, 255);
+  text-decoration: none;
+}
+
+a.hover{
+  color :rgb(214, 217, 255);
+  text-decoration: none;
+}
+
+.menu-item.active a{
+  color: white;
+  padding: 20px;
+}
+
+.menu-item.active a.hover{
+  color: white;
+  text-decoration: none;
+}
+
+.contents{
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+
+}
+
+.container-fluid{
+  text-align: center;
+}
+
+h3{
+  text-align: center;
+  margin-top: 50px;
+}
+
+footer{
+  padding-left: auto;
+  padding-right: auto;
+}
+
+table{
+  width: 65%;
+  height: 40px;
+  margin-top: 25px;
+  border-collapse:separate;
+  border-spacing: 0;
+  margin-right: auto;
+  margin-left: auto;
+
+}
+
+tr.term{
+  text-align: center;
+  color:white;
+  background: linear-gradient(#b7d1ec,#66819c);
+  border-left: 1px solid #3c6690;
+  border-top: 1px solid #3c6690;
+  border-bottom: 1px solid #3c66909d;
+  box-shadow: 0px 0.5px 0.5px rgba(255,255,255,0.3) inset;
+  padding: 10px 0;
+}
+
+
+tr.items{
+  text-align: center;
+  border-bottom: 0.5px solid #a8b7c5be;
+  border-top:none;
+  box-shadow: 0px -1px 3px 1px #eee inset;
+  background-color: #e6e6fa;
+  width: 25%;
+  padding: 10px 0;
+}
+
+table td:last-child{
+  border-right: 1px solid #a8b7c5;
+}
+
+table tr:last-child td:first-child {
+  border-radius: 0 0 0 5px;
+}
+
+table tr:last-child td:last-child {
+  border-radius: 0 0 5px 0;
+}
+
+.set-menu {
+  width:45%;
+  height:250px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 30px;
+  padding: 8px 19px;
+  color: black;
+  background: rgb(245, 254, 255);
+  border-top: solid 3px #e6e6fa;
+  border-bottom: solid 3px #e6e6fa;
+}
+
+.input-area {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.input-minutes, .input-sets {
+  margin-right: 40px;
+  margin-top: 30px;
+  float: left;
+  width: 100%;
+  max-width: 100%;
+  border: none;
+  margin: 0.5rem 0;
+  padding: 0.5rem 1rem;
+  border-radius: 0.3rem;
+  background: darken(#f9f9f9, 10%);
+  color: darken(#f9f9f9, 50%);
+}
+
+.set-button {
+  
+}
+
+.timer {
+    text-align: center;
+    margin-top: 70px;
+    font-size: 100px;
+}
+
+.buttons {
+    text-align: center;
+    margin-top: 70px;
+    font-size: 30px;
+}
+
+.buttons {
+    color: #fff;
+    background-color: #eb6100;
+}
+  
+.buttons:hover {
+   color: #fff;
+   background: #f56500;
+}
+  
+.buttons--shadow {
+  -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+}
+  
+.buttons--circle {
+  border-radius: 50%;
+  line-height: 100px;
+  width: 100px;
+  height: 100px;
+  padding: 0;
+}
+
+#id_minute, #id_count, #id_sumtime {
+  width: 120px;
+  height: 60px;
+  text-align: center;
+}
+
+.set{
+  text-align: center;
+  font-size: 50px;
+  padding-left: auto;
+  padding-right: auto;
+}
