@@ -21,31 +21,32 @@ class ProjectForm(forms.ModelForm):
             'project_name': forms.TextInput(
                 attrs={
                     'class':'form-control',
-                    'placeholder':'pjroject_name (プロジェクト名)',
+                    'placeholder':'pjroject_name',
                     }
             ),
             'expenses_item': forms.TextInput(
                 attrs={
-                    'class':"form-control",
-                    'placeholder':'expenses_item (経費項目)',
+                    'class':'form-control',
+                    'placeholder':'expenses_item',
                     }
             ),
             'expenses': forms.TextInput(
                 attrs={
-                    'class':"form-control",
-                    'placeholder':'expenses (経費)',
+                    'class':'form-control',
+                    'placeholder':'expenses',
                     'pattern':'[0-9]',
                     }
             ),
             'description': forms.Textarea(
                 attrs={
-                    'class':"form-control",
-                    'placeholder':'description (概要)',
+                    'class':'form-control',
+                    'placeholder':'description',
                     }
             ),
             'due_date': forms.SelectDateWidget(
                 attrs={
-                    'class':"form-control",
+                    'class':'form-control',
+                    'style': 'width: 31%; display: inline-block; margin:3px;'
                     }
             ),
         }
@@ -57,27 +58,21 @@ class SetPlanForm(forms.ModelForm):
         model = SetPlan
         labels = {
             'minute':'',
-            'count':'',
-            'sumtime':'',
+            'sets':'',
+            'total':'',
         }
-        fields = ('minute', 'count', 'sumtime',)
+        fields = ('minute', 'sets', 'total',)
         widgets = {
             'minute' : forms.Select(
                 attrs={
-                    'class':"form-control",
-                    'palceholder':'minute（分/セット）',
+                    'class':'form-control',
                 }
             ),
-            'count' : forms.DateInput(
+            'sets' : forms.Select(
                 attrs={
-                    'class':"form-control",
-                    'palceholder':'set（セット）',
-                }
-            ),
-            'sumtime' : forms.DateInput(
-                attrs={
-                    'class':"form-control",
-                    'palceholder':'sumtime（合計）',
+                    'class':'form-control',
                 }
             ),
         }
+
+   

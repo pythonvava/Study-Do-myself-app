@@ -13,7 +13,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <title>SetPlan</title>
-  <link rel='stylesheet' href="{% static 'css/start.css' %}">
+  <link rel='stylesheet' href="{% static 'css/setplan.css' %}">
 </head>
 
 <body>
@@ -60,39 +60,69 @@
   </header>
 
   <main role="main">
-    <div class=set-menu>
+    <div class="set-menu">
       <h3>Please set today's study plan</h3>
-      <div class=input-area>
-        <form method="POST" action="{% url 'project' %}" novalidate>
+      <div class="input-area">
+        <form method="POST" action="{% url 'setplan' %}" novalidate>
           {% csrf_token %}
           <div class="set" style="display:inline-flex">
-            <div class=input-minutes>
+            <div class="input-minutes">
               {{ form.minute }}
-            </div> 
-            <div class=input-sets>
-              {{ form.count }}
             </div>
-            <div class=set-button>
-              <button>Set</button>
+            <div class="input-sets">
+              {{ form.sets }}
             </div>
+          </div>
+          <div class="set-button">
+            <button class="btn btn-primary" id="OK" type="submit" action=""
+              style="margin-right:auto; margin-left:auto;">OK</button>
           </div>
         </form>
       </div>
     </div>
 
-    <div class=content>
+    <div class="todaysmenu">
       <h3>Today's Menu</h3>
+      <table class="items">
+        <tbody>
+          <tr>
+            <th>StudyTime</th>
+            <th>RestTime</th>
+            <th>1setTime</th>
+            <th>Sets</th>
+            <th>Total</th>
+          </tr>
+        </tbody>
+      </table>
+      <table class="times">
+        <tbody>
+          <tr>
+            <th>00</th>
+            <th>00</th>
+            <th>00</th>
+            <th>00</th>
+            <th>00</th>
+          </tr>
+        </tbody>
+      </table>
+      <div class="buttons">
+        <button class="btn btn-primary" id="Start" type="submit" style="margin-right:auto; margin-left:auto;
+      text-align:center ;">Start</button>
+        <button class="btn btn-primary" id="Cancel" type="submit" style="margin-right:auto; margin-left:auto;
+      text-align:center ;">Cancel</button>
+      </div>
     </div>
 
-    <button> OK </button>
 
-    </div>
+
+    <!--
     <div class="timer" id="timer">00:00:000</div>
     <div class="buttons">
       <button id="start">start</button>
       <button id="stop">stop</button>
       <button id="reset">reset</button>
     </div>
+    -->
   </main>
   <br>
   <footer>
@@ -107,8 +137,7 @@
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
-  <script type="JavaScript" src="{% static 'js/timer.js' %}"></script>
-  <script type="JavaScript" src="{% static 'js/gettime.js' %}"></script>
+  <script type="JavaScript" src="{% static 'js/setmenu.js' %}"></script>
 </body>
 
 </html>

@@ -110,8 +110,8 @@ table tr:last-child td:last-child {
 }
 
 .set-menu {
-  width:45%;
-  height:250px;
+  width:75%;
+  height:300px;
   margin-right: auto;
   margin-left: auto;
   margin-top: 30px;
@@ -141,43 +141,10 @@ table tr:last-child td:last-child {
   color: darken(#f9f9f9, 50%);
 }
 
-.set-button {
-  
-}
-
 .timer {
     text-align: center;
     margin-top: 70px;
     font-size: 100px;
-}
-
-.buttons {
-    text-align: center;
-    margin-top: 70px;
-    font-size: 30px;
-}
-
-.buttons {
-    color: #fff;
-    background-color: #eb6100;
-}
-  
-.buttons:hover {
-   color: #fff;
-   background: #f56500;
-}
-  
-.buttons--shadow {
-  -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
-}
-  
-.buttons--circle {
-  border-radius: 50%;
-  line-height: 100px;
-  width: 100px;
-  height: 100px;
-  padding: 0;
 }
 
 #id_minute, #id_count, #id_sumtime {
@@ -186,9 +153,57 @@ table tr:last-child td:last-child {
   text-align: center;
 }
 
-.set{
+.todaysmenu {
+  width:75%;
+  height:375px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 30px;
+  padding: 8px 19px;
+  color: black;
+  background: rgb(245, 254, 255);
+  border-top: solid 3px #e6e6fa;
+  border-bottom: solid 3px #e6e6fa;
+}
+
+table.items .table.times {
+  table-layout: fixed;
+  border-collapse:collapse;
+  margin:0 auto;
+}
+
+tbody {
+  width:60px;
+}
+
+th {
+  border-bottom:2px solid #000;
+  padding:10px;
+}
+
+.buttons {
+  color: #fff;
+}
+
+.buttons:hover {
+  color: #fff;
+ }
+
+.buttons {
   text-align: center;
-  font-size: 50px;
-  padding-left: auto;
-  padding-right: auto;
+  margin-top: 70px;
+  font-size: 30px;
+}
+
+.buttons--shadow {
+-webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+.buttons--circle {
+border-radius: 50%;
+line-height: 100px;
+width: 100px;
+height: 100px;
+padding: 0;
 }

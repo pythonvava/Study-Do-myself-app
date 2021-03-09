@@ -88,12 +88,12 @@ h3:after {
 }
 
 a{
-  color :rgb(214, 217, 255);
+  color :white;
   text-decoration: none;
 }
 
 a.hover{
-  color :rgb(214, 217, 255);
+  color :white;
   text-decoration: none;
 }
 

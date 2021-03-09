@@ -37,3 +37,15 @@ ul{
     margin-top: 10px;
     margin-bottom: 10px;
   }
+
+.expenses_item{
+    width:45%;
+}
+
+.expenses{
+    width:45%;
+}
+
+.due_date{
+    width:30%;
+}

@@ -47,16 +47,21 @@ def project(request):
 
 def mypage(request):
     projects = Project.objects.filter(build_date__lte=timezone.now()).order_by('due_date')
+    post_pks = request.POST.getlist('delete')
+    Project.objects.filter(pk__in=post_pks).delete()
     return render(request, 'mypage.html', {'projects':projects})
+
 
 
 class ProjectDetailView(DetailView):
     template_name = 'project_detail.html'
     model = Project
 
-def SetPlan(request):
+def setplan(request):
     if request.method == "POST":
         form = SetPlanForm(request.POST)
+        print(form.is_valid())
+        print(type(request.POST["minute"]))
         if form.is_valid():
             Startset = form.save(commit=False)
             Startset.save()
@@ -64,4 +69,4 @@ def SetPlan(request):
             return redirect('setplan')
     else:
         form = SetPlanForm()
-    return  render(request, 'start.html', {'form':form})
+    return  render(request, 'setplan.html', {'form':form})
