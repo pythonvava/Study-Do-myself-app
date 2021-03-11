@@ -17,26 +17,27 @@ class Project(models.Model):
 
 class SetPlan(models.Model):
     MINUTES = (
-        ('' , 'minute',),
-        (15 , 15,),
-        (25 , 25,),
-        (50 , 50,),
+        ('','minutes'),
+        ('1',15),
+        ('2',25),
+        ('3',50),
     )
     SETS = (
-        ('' , 'sets',),
-        (1 , 1 ,),
-        (2 , 2 ,),
-        (3 , 3 ,),
-        (4 , 4 ,),
-        (5 , 5 ,),
-        (6 , 6 ,),
-        (7 , 7 ,),
-        (8 , 8 ,),
-        (9 , 9 ,),
-        (10 , 10 ,),
+        ('','sets'),
+        ('1',1),
+        ('2',2),
+        ('3',3),
+        ('4',4),
+        ('5',5),
+        ('6',6),
+        ('7',7),
+        ('8',8),
+        ('9',9),
+        ('10',10),
     )
-    minute = models.IntegerField('分', choices=MINUTES, blank=False, default=None)
-    sets = models.IntegerField('セット回数', choices=SETS, blank=False, default=None)
-    total = models.IntegerField('総勉強時間', blank=False)
+
+    minute = models.CharField('分', choices=MINUTES, max_length=200, blank=False, default='0')
+    sets = models.CharField('セット回数', choices=SETS, max_length=200, blank=False, default='0')
+    total = models.CharField('総勉強時間', max_length=200, blank=False, default='0')
     SelfAssesment = models.TextField('自己評価', blank=False)
     Comment = models.TextField('コメント', blank=False)

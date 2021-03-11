@@ -61,9 +61,10 @@ def setplan(request):
     if request.method == "POST":
         form = SetPlanForm(request.POST)
         print(form.is_valid())
+        print(form.errors)
         print(type(request.POST["minute"]))
         if form.is_valid():
-            Startset = form.save(commit=False)
+            Startset = form.save(commit=False) 
             Startset.save()
             form.save()
             return redirect('setplan')

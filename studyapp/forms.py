@@ -59,18 +59,19 @@ class SetPlanForm(forms.ModelForm):
         labels = {
             'minute':'',
             'sets':'',
-            'total':'',
         }
-        fields = ('minute', 'sets', 'total',)
+        fields = ('minute', 'sets')
         widgets = {
             'minute' : forms.Select(
                 attrs={
                     'class':'form-control',
+                    'pattern':'^[0-9]+$',
                 }
             ),
             'sets' : forms.Select(
                 attrs={
                     'class':'form-control',
+                    'pattern':'^[0-9]+$',
                 }
             ),
         }
