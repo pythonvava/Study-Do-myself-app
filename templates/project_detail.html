@@ -70,7 +70,7 @@
 
       <h3 class=due_date> DueDate </h3>
       <p class=box>{{ object.due_date }}</p>
-      <a class="btn btn-primary" style="width:250px; margin-right:auto; margin-left:auto;" href="{% url 'setplan' %}"
+      <a class="btn btn-primary" style="width:250px; margin-right:auto; margin-left:auto;" href="{% url 'setplan' pk=object.pk %}"
           role="button">Make plan</a>
       <table>
         <tr class='term'>

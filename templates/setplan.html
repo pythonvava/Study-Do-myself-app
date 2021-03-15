@@ -63,7 +63,7 @@
     <div class="set-menu">
       <h3>Please set today's study plan</h3>
       <div class="input-area">
-        <form method="POST" action="{% url 'setplan' %}" novalidate>
+        <form method="POST" action="{% url 'setplan' pk=pk %}" novalidate>
           {% csrf_token %}
           <div class="set" style="display:inline-flex">
             <div class="input-minutes">

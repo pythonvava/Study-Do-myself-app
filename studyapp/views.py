@@ -52,22 +52,19 @@ def mypage(request):
     return render(request, 'mypage.html', {'projects':projects})
 
 
-
 class ProjectDetailView(DetailView):
     template_name = 'project_detail.html'
     model = Project
 
-def setplan(request):
+
+def setplan(request, pk):
     if request.method == "POST":
         form = SetPlanForm(request.POST)
-        print(form.is_valid())
-        print(form.errors)
-        print(type(request.POST["minute"]))
         if form.is_valid():
             Startset = form.save(commit=False) 
             Startset.save()
             form.save()
-            return redirect('setplan')
+            return redirect('setplan', pk=pk)
     else:
-        form = SetPlanForm()
-    return  render(request, 'setplan.html', {'form':form})
+        form = SetPlanForm()      
+    return  render(request, 'setplan.html', {'form':form, 'pk':pk})
