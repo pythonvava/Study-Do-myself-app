@@ -6,7 +6,7 @@ from .forms import ProjectForm, SetPlanForm
 from .models import Project, SetPlan
 from django.utils import timezone
 from django.contrib.auth.decorators import login_required
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView
 
 
 def firstpg(request):
@@ -49,12 +49,13 @@ def mypage(request):
     projects = Project.objects.filter(build_date__lte=timezone.now()).order_by('due_date')
     post_pks = request.POST.getlist('delete')
     Project.objects.filter(pk__in=post_pks).delete()
+    num = Project.objects.all()
     return render(request, 'mypage.html', {'projects':projects})
 
 
-class ProjectDetailView(DetailView):
-    template_name = 'project_detail.html'
-    model = Project
+def projectdetail(request, pk):
+    project = Project.objects.get(pk=pk)
+    return render(request, 'project_detail.html', {'project':project, 'pk':pk})
 
 
 def setplan(request, pk):

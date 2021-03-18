@@ -111,7 +111,7 @@
         <tr class='items'>
           <th> {{ project.project_name }} </th>
           <th> {{ project.due_date }} </th>
-          <th> <a href="{% url 'project_detail' pk=project.id %}">Check </th>
+          <th> <a href="{% url 'project_detail' pk=project.pk %}">Check </th>
           <form id="delete" action="" method="POST">
             <th> <input type="checkbox" name="delete" value="{{ project.pk }}"> </th>
             {% csrf_token %}

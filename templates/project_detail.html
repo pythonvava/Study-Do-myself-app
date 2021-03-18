@@ -63,14 +63,14 @@
   <main role="main">
     <div class=contents>
       <h3 class=project_name> ProjectName </h3>
-      <p class=box>{{ object.project_name }}</p>
+      <p class=box>{{ project.project_name }}</p>
 
       <h3 class=Description> Description </h3>
-      <p class=descriptionbox>{{ object.description }}</p>
+      <p class=descriptionbox>{{ project.description }}</p>
 
       <h3 class=due_date> DueDate </h3>
-      <p class=box>{{ object.due_date }}</p>
-      <a class="btn btn-primary" style="width:250px; margin-right:auto; margin-left:auto;" href="{% url 'setplan' pk=object.pk %}"
+      <p class=box>{{ project.due_date }}</p>
+      <a class="btn btn-primary" style="width:250px; margin-right:auto; margin-left:auto;" href="{% url 'setplan' pk=pk %}"
           role="button">Make plan</a>
       <table>
         <tr class='term'>
@@ -84,7 +84,7 @@
           <tr class='items'>
            <th> {{ project.project_name }} </th>
            <th> {{ project.due_date }} </th>
-           <th> <a href="{% url 'project_detail' pk=project.id %}">Check </th>
+           <th> <a href="{% url 'project_detail' pk=pk %}">Check </th>
           </tr>
           {% endif %}
         {% endfor %} 
