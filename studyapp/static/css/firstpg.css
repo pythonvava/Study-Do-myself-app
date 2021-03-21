@@ -45,3 +45,10 @@ footer{
     padding-left: auto;
     padding-right: auto;
 }
+
+section.jumbotron {
+    background-color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
